@@ -1,8 +1,14 @@
-let balance = 0.00;
+const express = require('express');
+const app = express();
 
-$("#currentBalance").append("$" + balance.toFixed(2));
+app.use(express.static(`${__dirname}`));
 
-$("#addToJar").click(function(){
-    balance += 0.25;
-    $("#currentBalance").text("$" + balance.toFixed(2));
+app.get('/', function (req, res) {
+	res.sendFile(__dirname + '/public/index.html');
+});
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+	console.log(`Server listening on port ${port}`);
 });
