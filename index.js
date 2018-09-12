@@ -7,10 +7,6 @@ app.get('/', function (req, res) {
 	res.sendFile(__dirname + '/public/index.html');
 });
 
-app.get('/about', function (req, res) {
-	res.sendFile(__dirname + '/public/about.html');
-});
-
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
