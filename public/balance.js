@@ -6,3 +6,7 @@ $("#addToJar").click(function(){
     balance += 0.25;
     $("#currentBalance").text("$" + balance.toFixed(2));
 });
+
+$("#donate").click(function(){
+    alert('Account is set up to donate!')
+});
