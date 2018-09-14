@@ -8,5 +8,8 @@ $("#addToJar").click(function(){
 });
 
 $("#donate").click(function(){
-    alert('Account is set up to donate!')
+    $.get('/getbalance', function( data ) {
+        $("#currentBalance").text("$" + data);
+      });
 });
+
