@@ -39,10 +39,10 @@ db.query('SELECT * FROM Balance;', function (err, results, fields) {
 //Set up GET route for Balance
 
 app.get('/getbalance', (req, res) => {
-  db.query('SELECT * FROM Balance;', function (err, results, fields) {
-    console.log(results);
+  let sql = 'SELECT * FROM Balance';
+  let query = db.query(sql, (err, results) => {
+    if(err) throw err;
+    console.log(JSON.stringify(results[0]));
+    res.send(JSON.stringify(results[0].Balance));
   });
-  res.send('Fetching Balance');
 });
-
-db.end()
