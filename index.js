@@ -46,3 +46,7 @@ app.get('/getbalance', (req, res) => {
     res.send(JSON.stringify(results[0].Balance));
   });
 });
+
+app.post('/addtobalance', (req, res) => {
+  res.send('Added to balance');
+});
