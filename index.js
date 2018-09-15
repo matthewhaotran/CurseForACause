@@ -47,6 +47,7 @@ app.get('/getbalance', (req, res) => {
   });
 });
 
-app.post('/addtobalance', (req, res) => {
-  res.send('Added to balance');
+app.post('/getbalance', function (req, res) {
+  const increment = 0.25;
+  res.send('increment');
 });
