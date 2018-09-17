@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 var mysql = require('mysql')
+const bodyParser = require('body-parser');
 
 //Set up server
 
@@ -47,7 +48,7 @@ app.get('/getbalance', (req, res) => {
   });
 });
 
-app.post('/getbalance', function (req, res) {
-  const increment = 0.25;
-  res.send('increment');
+app.post('/addbalance', function(request, response){
+  console.log(request);
+  response.send(request);
 });
