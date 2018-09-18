@@ -45,6 +45,6 @@ app.get('/getbalance', (req, res) => {
 //POST route to add to balance
 
 app.post('/addbalance', function(req, res){
-  console.log(req.body);
+  console.log(req);
   res.send(req.body);
 });

@@ -6,13 +6,16 @@ $.get('/getbalance', function( data ) {
   });
 
 $("#addToJar").click(function(){
-    balance += 0.25;
-    $("#currentBalance").text("$" + balance.toFixed(2));
+    var text= "hi";
+    $.post("/addbalance", {suggest: text}, function(result){
+        alert(result);
+    });
 });
 
 $("#donate").click(function(){
-    $.get('/getbalance', function( data ) {
-        $("#currentBalance").text("$" + data);
+    const data = 10;
+    $.get('/getbalance', data, function( data ) {
+        alert(data);
       });
 });
 
