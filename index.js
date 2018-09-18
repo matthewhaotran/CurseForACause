@@ -1,3 +1,5 @@
+// Requires
+
 const express = require('express');
 const app = express();
 var mysql = require('mysql')
@@ -6,12 +8,12 @@ const bodyParser = require('body-parser');
 //Set up server
 
 app.use(express.static(`${__dirname}`));
+app.use(bodyParser.json());
+const port = process.env.PORT || 3000;
 
 app.get('/', function (req, res) {
 	res.sendFile(__dirname + '/public/index.html');
 });
-
-const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
 	console.log(`Server listening on port ${port}`);
@@ -30,25 +32,19 @@ db.connect(
   console.log('Connected to Database')
 )
 
-//Test Query of DB's Balance table
-
-db.query('SELECT * FROM Balance;', function (err, results, fields) {
-  let balanceTable = JSON.stringify(results[0]);
-  console.log(balanceTable);
-});
-
-//Set up GET route for Balance
+//GET route to retrieve balance
 
 app.get('/getbalance', (req, res) => {
   let sql = 'SELECT * FROM Balance';
   let query = db.query(sql, (err, results) => {
     if(err) throw err;
-    console.log(JSON.stringify(results[0]));
     res.send(JSON.stringify(results[0].Balance));
   });
 });
 
-app.post('/addbalance', function(request, response){
-  console.log(request);
-  response.send(request);
+//POST route to add to balance
+
+app.post('/addbalance', function(req, res){
+  console.log(req.body);
+  res.send(req.body);
 });
