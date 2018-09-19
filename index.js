@@ -38,13 +38,20 @@ app.get('/getbalance', (req, res) => {
   let sql = 'SELECT * FROM Balance';
   let query = db.query(sql, (err, results) => {
     if(err) throw err;
-    res.send(JSON.stringify(results[0].Balance));
+    const balance = parseInt(JSON.stringify(results[0].Balance)) + 0.25;
+    console.log(balance);
+    query = db.query('Update balance set balance=' + balance + ' where ID=1', (err, results) => {
+      if(err) throw err;
+    });
   });
+
+  
+  res.send('done');
 });
 
 //POST route to add to balance
 
-app.post('/addbalance', function(req, res){
+app.get('/addbalance', function(req, res){
   console.log(req);
   res.send(req.body);
 });
