@@ -19,6 +19,13 @@ app.listen(port, () => {
 	console.log(`Server listening on port ${port}`);
 });
 
+//Keep Heroku site live by pinging every 5 minutes
+
+var http = require("http");
+setInterval(function() {
+    http.get("http://curseforacause.herokuapp.com");
+}, 300000); // every 5 minutes (300000)
+
 //Connect to DB
 
 var db = mysql.createConnection({
