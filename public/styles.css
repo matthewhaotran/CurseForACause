@@ -1,10 +1,29 @@
+.banner {
+    background-color: lightblue; 
+    top: 0px;  
+    padding: 15px; 
+}
+
 h1 {
-    color: red;
+    color: white;
     font-family: 'ITC Bauhaus';
+    margin-top: 0px;
+    font-weight: bold;
 }
 
 #balanceBox {
-    height: 157px;
+    height: 120px;
     width: 157px;
-    margin: 25px auto;
+    margin: 10px auto;
 }
+
+footer {
+    background-color: black;
+    bottom: 0px;
+    height: 50px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
