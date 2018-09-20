@@ -2,3 +2,10 @@ h1 {
     color: red;
     font-family: 'ITC Bauhaus';
 }
+
+#balanceBox {
+    border: 1px solid black;
+    height: 157px;
+    width: 157px;
+    margin: 25px auto;
+}

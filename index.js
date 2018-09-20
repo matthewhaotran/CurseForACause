@@ -34,14 +34,14 @@ var db = mysql.createConnection({
   password : '0acae961',
   database : 'heroku_f67894daeab864d'
 });
-
-db.connect(
-  console.log('Connected to Database')
-)
+  db.connect(
+    console.log('Connected to Database')
+  )
 
 //GET route to retrieve balance
 
 app.get('/getbalance', (req, res) => {
+
   let sql = 'SELECT * FROM Balance';
   let query = db.query(sql, (err, results) => {
     if(err) throw err;
@@ -49,7 +49,7 @@ app.get('/getbalance', (req, res) => {
   });
 });
 
-//POST route to add to balance
+//GET route to add to balance
 
 app.get('/addbalance', function(req, res){
   db.query('SELECT * FROM Balance', (err, results) => {
@@ -65,3 +65,9 @@ app.get('/addbalance', function(req, res){
     res.send(JSON.stringify(results[0].Balance));
   });
 });
+
+//Interval to keep connection to DB alive
+
+setInterval(function () {
+  db.query('SELECT 1');
+}, 5000);
