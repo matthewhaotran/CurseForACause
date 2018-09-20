@@ -10,5 +10,4 @@ $("#addToJar").click(function(){
         balance = parseFloat(data);
         $("#currentBalance").text(balance.toFixed(2));
       });
-      location.reload();
 });
