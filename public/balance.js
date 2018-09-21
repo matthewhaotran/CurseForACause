@@ -8,7 +8,12 @@ $.get('/getbalance', function( data ) {
 $("#addToJar").click(function(){
     $.get('/addbalance', function( data ) {
         balance = parseFloat(data);
-        $("#currentBalance").text(balance.toFixed(2));
+        $("#currentBalance").text(balance.toFixed(2)); 
+        window.location.reload(true)
       });
-      location.reload();
+      
+});
+
+$("#donate").click(function(){
+  alert('Donations are not currently available.');
 });
