@@ -82,3 +82,9 @@ html, body {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: lightblue;}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .dropdown {
+        display: none;
+    }
+}
