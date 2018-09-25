@@ -56,6 +56,8 @@ app.get('/getbalance', (req, res) => {
 //GET route to add to balance
 
 app.get('/addbalance', function(req, res){
+  var balance;
+  var newBalance;
   db.query('SELECT * FROM Balance', (err, results) => {
     if(err) throw err;
     balance = parseFloat(JSON.stringify(results[0].Balance))
@@ -64,11 +66,8 @@ app.get('/addbalance', function(req, res){
       if(err) throw err;
     });
   });
-  db.query('SELECT * FROM Balance', (err, results) => {
-    if(err) throw err;
-    res.send(JSON.stringify(results[0].Balance));
-  });
-});
+  res.send(JSON.stringify(newBalance));
+ });
 
 //Interval to keep connection to DB alive
 
