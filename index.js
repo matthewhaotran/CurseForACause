@@ -19,6 +19,10 @@ app.get('/about', function (req, res) {
 	res.sendFile(__dirname + '/public/about.html');
 });
 
+app.get('/cursehistory', function (req, res) {
+	res.sendFile(__dirname + '/public/cursehistory.html');
+});
+
 app.listen(port, () => {
 	console.log(`Server listening on port ${port}`);
 });
