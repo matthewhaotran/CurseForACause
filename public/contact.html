@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Curse for A Cause</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/styles.css">
+</head>
+
+<body class="text-center">
+    <div class="banner">
+        <h1>Curse For a Cause</h1>
+        <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+            <a href="about">About</a>
+            <a href="cursehistory">Curse History</a>
+            <a href="contact">Contact</a>
+        </div>
+    </div>
+    </div>
+    
+
+    <h3>A web application that tracks your swearing and allows you to donate your jar to a good cause</h3>
+    <img src="public/Images/swearJar.png" alt="">
+    <div class="text-center">
+        <div id="balanceBox">
+            <h2>Current Balance</h2>
+            <h3>$<span id="currentBalance"></span></h3>
+        </div>
+    </div>
+    <button id="addToJar" class="btn btn-lg btn-primary">Add</button>
+    <button id="donate" class="btn btn-lg btn-success">Donate</button>
+    <p></p>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="public/balance.js"></script>
+</body>
+
+</html>
