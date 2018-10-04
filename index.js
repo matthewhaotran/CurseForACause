@@ -23,6 +23,10 @@ app.get('/cursehistory', function (req, res) {
 	res.sendFile(__dirname + '/public/cursehistory.html');
 });
 
+app.get('/contact', function (req, res) {
+	res.sendFile(__dirname + '/public/contact.html');
+});
+
 app.listen(port, () => {
 	console.log(`Server listening on port ${port}`);
 });
