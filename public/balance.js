@@ -1,6 +1,6 @@
 let balance = 0.00;
 
-/*
+
 
 $.get('/getbalance', function( data ) {
     balance = parseFloat(data);
@@ -14,7 +14,7 @@ $("#addToJar").click(function(){
         window.location.reload(true);
       }); 
 });
-*/
+/*
 $("#addToJar").click(function(){
   $.get('/addbalance', function( data ) {
       balance = parseFloat(data);
@@ -25,7 +25,7 @@ $("#addToJar").click(function(){
     );
     
 });
-
+*/
 $("#donate").click(function(){
   alert('Donations are not currently available.');
 });
