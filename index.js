@@ -78,7 +78,8 @@ app.get('/addbalance', function(req, res){
  });
 
 //Interval to keep connection to DB alive
-
+/*
 setInterval(function () {
   db.query('SELECT 1');
 }, 5000);
+*/
